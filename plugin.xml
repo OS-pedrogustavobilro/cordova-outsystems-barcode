@@ -44,7 +44,8 @@
     <source-file src="src/ios/OSBarcodeErrorFork.swift" />
     <source-file src="src/ios/OSBarcodeScanArgumentsModelFork.swift" />
 
-    <source-file src="src/ios/OSBARCArgumentMappableFork.swift" target-dir="extensions" />
+    <!-- Commented because it seems to be causing clashes with the other plugin where this same extension is defined. -->
+    <!--<source-file src="src/ios/OSBARCArgumentMappableFork.swift" target-dir="extensions" />-->
 
     <podspec>
       <config>

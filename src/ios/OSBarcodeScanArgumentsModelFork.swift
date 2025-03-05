@@ -25,11 +25,13 @@ struct OSBarcodeScanArgumentsModelFork: Decodable {
             scanButtonText = try container.decode(String.self, forKey: .scanText)
         }
         
+        // using hardcoded cameraDirection and scanOrientation
+        //  because of compilation error related to duplicate OSBARCArgumentMappable extensions
         let cameraDirectionInt = try container.decode(Int.self, forKey: .cameraDirection)
-        let cameraDirection = OSBARCCameraModel(value: cameraDirectionInt)
+        let cameraDirection = OSBARCCameraModel.back
         
         let scanOrientationInt = try container.decode(Int.self, forKey: .scanOrientation)
-        let scanOrientation = OSBARCOrientationModel(value: scanOrientationInt)
+        let scanOrientation = OSBARCOrientationModel.adaptive
         
         self.init(scanInstructions, scanButtonText, cameraDirection, scanOrientation)
     }
