@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<plugin id="com.outsystems.plugins.barcode" version="1.2.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-  <name>OSBarcode</name>
-  <description>Cordova Bridge for the OutSystems Officially Supported Barcode Plugin.</description>
-  <author>OutSystems Inc</author>
-  <js-module name="OSBarcode" src="www/OSBarcode.js">
-    <clobbers target="cordova.plugins.OSBarcode"/>
+<plugin id="com.outsystems.plugins.barcodefork" version="1.2.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>OSBarcodeFork</name>
+  <description>Fork of Cordova Bridge for the OutSystems Officially Supported Barcode Plugin.</description>
+  <author>OutSystems Inc (fork by Pedro Bilro)</author>
+  <js-module name="OSBarcodeFork" src="www/OSBarcodeFork.js">
+    <clobbers target="cordova.plugins.OSBarcodeFork"/>
   </js-module>
 
-  <js-module name="OSBarcodeScanner" src="www/OSBarcodeScanner.js">
-    <clobbers target="cordova.plugins.OSBarcodeScanner"/>
+  <js-module name="OSBarcodeScannerFork" src="www/OSBarcodeScannerFork.js">
+    <clobbers target="cordova.plugins.OSBarcodeScannerFork"/>
   </js-module>
 
-  <js-module name="OSBarcodeConstants" src="www/OSBarcodeConstants.js">
-    <clobbers target="OSBarcodeConstants"/>
+  <js-module name="OSBarcodeConstantsFork" src="www/OSBarcodeConstantsFork.js">
+    <clobbers target="OSBarcodeConstantsFork"/>
   </js-module>
 
   <platform name="android">
     <config-file parent="/*" target="res/xml/config.xml">
-      <feature name="OSBarcode">
-        <param name="android-package" value="com.outsystems.plugins.barcode.OSBarcode"/>
+      <feature name="OSBarcodeFork">
+        <param name="android-package" value="com.outsystems.plugins.barcode.OSBarcodeFork"/>
       </feature>
       <preference name="GradlePluginKotlinEnabled" value="true" />
       <preference name="GradlePluginKotlinCodeStyle" value="official" />
     </config-file>
     <config-file parent="/*" target="AndroidManifest.xml"/>
-    <source-file src="src/android/com/outsystems/plugins/barcode/OSBarcode.kt" target-dir="app/src/main/kotlin/com/outsystems/plugins/barcode"/>
+    <source-file src="src/android/com/outsystems/plugins/barcode/OSBarcodeFork.kt" target-dir="app/src/main/kotlin/com/outsystems/plugins/barcodefork"/>
     <framework src="src/android/com/outsystems/plugins/barcode/build.gradle" custom="true" type="gradleReference" />
   </platform>
   <platform name="ios">
     <config-file parent="/*" target="config.xml">
-      <feature name="OSBarcode">
-        <param name="ios-package" value="OSBarcode"/>
+      <feature name="OSBarcodeFork">
+        <param name="ios-package" value="OSBarcodeFork"/>
       </feature>
       <preference name="SwiftVersion" value="5" />
     </config-file>
@@ -40,11 +40,11 @@
       <string>$CAMERA_USAGE_DESCRIPTION</string>
     </config-file>
 
-    <source-file src="src/ios/OSBarcode.swift" />
-    <source-file src="src/ios/OSBarcodeError.swift" />
-    <source-file src="src/ios/OSBarcodeScanArgumentsModel.swift" />
+    <source-file src="src/ios/OSBarcodeFork.swift" />
+    <source-file src="src/ios/OSBarcodeErrorFork.swift" />
+    <source-file src="src/ios/OSBarcodeScanArgumentsModelFork.swift" />
 
-    <source-file src="src/ios/OSBARCArgumentMappable.swift" target-dir="extensions" />
+    <source-file src="src/ios/OSBARCArgumentMappableFork.swift" target-dir="extensions" />
 
     <podspec>
       <config>

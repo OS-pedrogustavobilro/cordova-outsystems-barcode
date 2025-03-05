@@ -12,10 +12,10 @@ import org.apache.cordova.CordovaInterface
 import org.apache.cordova.CordovaWebView
 import org.json.JSONArray
 
-class OSBarcode : CordovaImplementation() {
+class OSBarcodeFork : CordovaImplementation() {
 
     companion object {
-        private const val ERROR_FORMAT_PREFIX = "OS-PLUG-BARC-"
+        private const val ERROR_FORMAT_PREFIX = "OS-PLUG-BARCFK-"
     }
 
     override var callbackContext: CallbackContext? = null

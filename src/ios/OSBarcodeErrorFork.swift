@@ -1,10 +1,10 @@
-private struct OSBarcodeErrorLabels {
+private struct OSBarcodeErrorLabelsFork {
     static let code = "code"
-    static let codeFormat = "OS-PLUG-BARC-"
+    static let codeFormat = "OS-PLUG-BARCFK-"
     static let message = "message"
 }
 
-enum OSBarcodeError: Int, CustomNSError, LocalizedError {
+enum OSBarcodeErrorFork: Int, CustomNSError, LocalizedError {
     case scanningError = 4
     case scanningCancelled = 6
     case cameraAccessDenied = 7
@@ -21,8 +21,8 @@ enum OSBarcodeError: Int, CustomNSError, LocalizedError {
     
     var errorDictionary: [String: String] {
         [
-            OSBarcodeErrorLabels.code: "\(OSBarcodeErrorLabels.codeFormat)\(String(format: "%04d", self.rawValue))",
-            OSBarcodeErrorLabels.message: self.errorDescription ?? ""
+            OSBarcodeErrorLabelsFork.code: "\(OSBarcodeErrorLabelsFork.codeFormat)\(String(format: "%04d", self.rawValue))",
+            OSBarcodeErrorLabelsFork.message: self.errorDescription ?? ""
         ]
     }
 }

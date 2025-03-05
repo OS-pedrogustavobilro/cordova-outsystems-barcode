@@ -1,8 +1,8 @@
 import OSBarcodeLib
 
 /// The plugin's main class
-@objc(OSBarcode)
-class OSBarcode: CDVPlugin {
+@objc(OSBarcodeFork)
+class OSBarcodeFork: CDVPlugin {
     /// The native library bridge
     var plugin: OSBARCManagerProtocol?
     
@@ -17,7 +17,7 @@ class OSBarcode: CDVPlugin {
             
             guard let argumentsDictionary = command.argument(at: 0) as? [String: Any],
                   let argumentsData = try? JSONSerialization.data(withJSONObject: argumentsDictionary),
-                  let argumentsModel = try? JSONDecoder().decode(OSBarcodeScanArgumentsModel.self, from: argumentsData)
+                  let argumentsModel = try? JSONDecoder().decode(OSBarcodeScanArgumentsModelFork.self, from: argumentsData)
             else { return self.send(error: .scanInputArgumentsIssue, for: command.callbackId) }
             
             Task {
@@ -36,13 +36,13 @@ class OSBarcode: CDVPlugin {
     }
 }
 
-private extension OSBarcode {
+private extension OSBarcodeFork {
     func send(successfulResult: String, for callbackId: String) {
         let pluginResult = CDVPluginResult(status: .ok, messageAs: successfulResult)
         self.commandDelegate.send(pluginResult, callbackId: callbackId)
     }
     
-    func send(error: OSBarcodeError, for callbackId: String) {
+    func send(error: OSBarcodeErrorFork, for callbackId: String) {
         let pluginResult = CDVPluginResult(status: .error, messageAs: error.errorDictionary)
         self.commandDelegate.send(pluginResult, callbackId: callbackId)
     }

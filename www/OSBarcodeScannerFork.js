@@ -1,6 +1,6 @@
 var exec = require('cordova/exec');
-var Barcode = require('./OSBarcode');
-var BarcodeConstants = require('./OSBarcodeConstants');
+var Barcode = require('./OSBarcodeFork');
+var BarcodeConstants = require('./OSBarcodeConstantsFork');
 
 exports.scan = function (options, successCallback, errorCallback) {
     options = options || {};

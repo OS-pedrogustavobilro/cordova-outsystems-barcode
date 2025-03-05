@@ -1,6 +1,6 @@
 import OSBarcodeLib
 
-struct OSBarcodeScanArgumentsModel: Decodable {
+struct OSBarcodeScanArgumentsModelFork: Decodable {
     let scanInstructions: String
     let scanButtonText: String?
     let cameraDirection: OSBARCCameraModel
