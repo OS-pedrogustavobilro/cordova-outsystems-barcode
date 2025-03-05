@@ -1,14 +1,14 @@
 import OSBarcodeLib
 
-protocol OSBARCArgumentMappable {
+protocol OSBARCArgumentMappableFork {
     init(value: Int)
 }
 
-extension OSBARCCameraModel: OSBARCArgumentMappable {
+extension OSBARCCameraModel: OSBARCArgumentMappableFork {
     init(value: Int) { self = value == 2 ? .front : .back }
 }
 
-extension OSBARCOrientationModel: OSBARCArgumentMappable {
+extension OSBARCOrientationModel: OSBARCArgumentMappableFork {
     init(value: Int) {
         switch value {
         case 1: self = .portrait
