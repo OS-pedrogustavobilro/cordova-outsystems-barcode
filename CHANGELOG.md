@@ -1,10 +1,3 @@
-## [2.0.2](https://github.com/OS-pedrogustavobilro/cordova-outsystems-barcode/compare/2.0.1...2.0.2) (2025-12-04)
-
-
-### Bug Fixes
-
-* trigger mock release ([400164c](https://github.com/OS-pedrogustavobilro/cordova-outsystems-barcode/commit/400164cd02db745f71fb244d82baba0555f22c08))
-
 ## [2.0.1]
 
 ### 02-10-2025
